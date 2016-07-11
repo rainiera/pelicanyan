@@ -10,20 +10,30 @@ styles, `#sidebar-checkbox` for behavior. -->
   </div>
 
   <nav class="sidebar-nav">
-  <a class="sidebar-nav-item" href="/">All</a>
 
-  {% for category, articles in categories %}
-      <a class="sidebar-nav-item" href="{{ SITEURL }}/{{ category.url }}">{{ category }}</a>
+  {% for page in pages|sort(attribute='title') %}
+    <a class="sidebar-nav-item" href="{{ SITEURL }}/{{ page.url }}#{{ page.slug }}">{{ page.title }}</a>
   {% endfor %}
 
   {% for title, href in LINKS %}
-  <a class="sidebar-nav-item" href="{{ href }}">{{ title }}</a>
+    <a class="sidebar-nav-item" href="{{ href }}">{{ title }}</a>
   {% endfor %}
+
   </nav>
 
   <div class="sidebar-item">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <ul class="social">
+      <li><a class="sc-github" href="https://github.com/rainiera" target="_blank"><i class="fa fa-github"></i></a></li>
+      <li><a class="sc-angellist" href="https://angel.co/rainiera" target="_blank"><i class="fa fa-angellist"></i></a></li>
+      <li><a class="sc-linkedin" href="https://linkedin.com/in/rainiera" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      <li><a class="sc-twitter" href="https://twitter.com/rainieratx" target="_blank"><i class="fa fa-twitter"></i></a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-item">
     <p>
-    <a href="https://twitter.com/{{ TWITTER_ACCOUNT }}">&copy; @{{ TWITTER_ACCOUNT }}</a> 2015
+    &copy; 2016. All rights reserved.
     </p>
     <p class="tiny-note">
       <a class="muted" href="https://github.com/thomaswilley/pelicanyan">pelicanyan v0.1</a>
