@@ -4,8 +4,12 @@
 
 <dl>
 {% for article in dates %}
-    <dt>{{ article.locale_date }}</dt>
-    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+  <dt>{{ article.locale_date }}</dt>
+  <dd>
+    <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br>
+    <div class="tiny-note"><a class="muted" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></div>
+  </dd>
+  
 {% endfor %}
 </dl>
 {% endblock %}
