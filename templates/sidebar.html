@@ -12,7 +12,7 @@ styles, `#sidebar-checkbox` for behavior. -->
   <nav class="sidebar-nav">
 
   {% for page in pages|sort(attribute='title') %}
-    <a class="sidebar-nav-item" href="{{ SITEURL }}/{{ page.url }}#{{ page.slug }}">{{ page.title }}</a>
+    <a class="sidebar-nav-item" href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
   {% endfor %}
 
   {% for title, href in LINKS %}
