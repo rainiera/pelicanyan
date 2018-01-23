@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Archives for {{ SITENAME }}</h1>
+<h1>Writing</h1>
+
+<p>I post as <a href="https://medium.com/@rainier/">@rainier</a> on Medium now.</p>
 
 <dl>
 {% for article in dates %}
@@ -9,7 +11,7 @@
     <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><br>
     <div class="tiny-note"><a class="muted" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></div>
   </dd>
-  
+
 {% endfor %}
 </dl>
 {% endblock %}
